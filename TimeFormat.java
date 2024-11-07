@@ -20,7 +20,7 @@ public class TimeFormat {
             time = "AM";
         }
 
-      
+    
         String formattedMinutes = String.format("%02d", minutes);
 
         System.out.println(newHours + ":" + formattedMinutes + " " + time);
