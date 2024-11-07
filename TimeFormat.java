@@ -6,14 +6,21 @@ public class TimeFormat {
         int newHours;
         String time;
 
-        if (hours >= 12) {
-            newHours = (hours == 12) ? 12 : hours - 12;
+        if (hours == 0) {
+            newHours = 0;
+            time = "AM";
+        } else if (hours == 12) {
+            newHours = 12; 
+            time = "PM";
+        } else if (hours > 12) {
+            newHours = hours - 12;
             time = "PM";
         } else {
-            newHours = (hours == 0) ? 12 : hours;
+            newHours = hours;
             time = "AM";
         }
 
+      
         String formattedMinutes = String.format("%02d", minutes);
 
         System.out.println(newHours + ":" + formattedMinutes + " " + time);
